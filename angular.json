@@ -66,7 +66,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "proyectoFinalMCarmenAlfaro:build"
+            "browserTarget": "proyectoFinalMCarmenAlfaro:build",
+            "proxyConfig": "proxy.conf.json"
+
           },
           "configurations": {
             "production": {
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "proyectoFinalMCarmenAlfaro"
+    }
+  },
+  "defaultProject": "proyectoFinalMCarmenAlfaro",
+  "cli": {
+    "analytics": "d01784e0-73df-4109-8573-f87c13d2989c"
+  }
 }
