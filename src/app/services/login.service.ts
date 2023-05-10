@@ -10,6 +10,7 @@ import { UserProfile } from '../entities/userProfile/userProfile.interface';
 
 export class LoginService {
   user
+  showModal
  baseUrl : string = "https://localhost:7089";
   constructor( private http: HttpClient) {
    

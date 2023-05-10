@@ -1,36 +1,32 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Entrar</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+
+  <div>
+    <form class="row g-3 fromReserva" [formGroup]="loginForm">
+      <div class="modal-body">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" class="form-control"
+            formControlName="emailAddress" placeholder="name@example.com">
+          <label for="floatingInput">Correo electrónico</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+            formControlName="psswdUser">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
       </div>
-      <form class="row g-3 fromReserva" [formGroup]="loginForm">
-        <div class="modal-body">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" class="form-control"
-              formControlName="emailAddress" placeholder="name@example.com">
-            <label for="floatingInput">Correo electrónico</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-              formControlName="psswdUser">
-            <label for="floatingPassword">Contraseña</label>
-          </div>
-        </div>
 
+      <p *ngIf="errorMessage">¡El usuario o contraseña no es correcto!</p>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  (click)="this.loginService.showModal = false">Cerrar</button>
+        <button type="submit" class="btn btn-primary guardarLogin"
+     (click)="loginBack()" 
+        >Guardar</button>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/home">Cerrar</button>
-          <button type="submit" class="btn btn-primary guardarLogin"
-       (click)="loginBack()" routerLink="/contact"
-          >Guardar</button>
-
-        </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
-</div>
+
 <!-- 
 <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
 <p-dialog header="Header" [(visible)]="visible" [style]="{ width: '50vw' }">

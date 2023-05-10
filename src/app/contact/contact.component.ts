@@ -14,10 +14,11 @@ export class ContactComponent implements OnInit {
     email: new FormControl('', Validators.required),
     comment: new FormControl('', Validators.required),
   });
-
+   
   constructor() { }
 
   ngOnInit(): void {
+    
 
 
   }

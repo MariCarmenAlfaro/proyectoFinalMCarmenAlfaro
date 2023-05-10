@@ -16,6 +16,11 @@ export class NavBarComponent implements OnInit {
     //cada vez que se llama al nav-bar osea siempre, se obtiene el usuario del local storage
     this.loginService.user = JSON.parse(window.localStorage.getItem("user"))
   }
+  
+
+    showDialog() {
+        this.loginService.showModal = true;
+    }
 
   logout(){
     this.loginService.user = null
